@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}nichochar {% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='simplegrid.css') }}">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='customStyle.css') }}">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='sunburst.css') }}">
+
+
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+    <script src="{{url_for('static', filename='js/prettify.js') }}"></script>
+    <!-- JQUERY -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-50437723-1', 'kloutometer.herokuapp.com');
+      ga('send', 'pageview');
+    </script>
+
+    {% block extra_scripts %}
+    {% endblock %}
+</head>
+
+<body onload="prettyPrint()">
+<div id="page-wrap">
+    <div id="header">
+        <a class="home" href="/">Nicholas Charriere</a>
+        <span class="header-links">
+            <a href="/blog">| blog</a>
+            <a href="/projects">| projects</a>
+            <a href="/about">| about</a> 
+        </span>
+    </div>
+{% block badass_content %}
+{% endblock %}
+</div>
+
+
+  <footer id="foot">
+    <p> Made by <a href="http://twitter.com/nichochar"> @nichochar </a> </br>
+  </footer>
+
+
+
+{% block scripts %}
+{% endblock %}
+</body>
+</html>

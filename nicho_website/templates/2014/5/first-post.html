@@ -1,0 +1,50 @@
+{% extends 'article.html' %}
+
+{% block article_content %}
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia libero a leo viverra venenatis. </p>
+<p class="quote">Proin et eros suscipit, pellentesque libero convallis, sagittis ligula. Vestibulum eu luctus ipsum. Donec ultricies nisi consequat, rutrum libero a, adipiscing purus. Donec venenatis, libero sed auctor hendrerit, felis nibh porttitor urna, in vulputate enim elit vel augue.
+</p>
+<p>
+Vestibulum et aliquet turpis. Maecenas <a href="/">ultricies quis turpis</a> vel rhoncus. Donec lobortis urna vel ligula laoreet tristique. Suspendisse euismod neque id lectus vestibulum, at fermentum libero viverra. Nunc vitae tincidunt metus, gravida pellentesque ante. Fusce suscipit nibh a metus porta, eget luctus purus semper. Nulla ullamcorper nibh vitae lectus facilisis venenatis. Phasellus eu mauris volutpat, cursus mauris quis, interdum velit. Nullam fringilla id urna eu auctor. Ut porta iaculis mattis. Aliquam quis lorem massa.
+
+</p>
+
+</br>
+<pre class="prettyprint linenums">
+@app.route('/chart')
+def show_chart():
+    """
+    This function shows a chart
+    """
+    handlers = request.args.get('handles', None)
+
+    if handlers:
+        # Strip eventual spaces
+        handlers = handlers.replace(" ","")
+
+        # Split at comma
+        handle_list = handlers.split(',')
+        handle_scores = {}
+        for handle in handle_list:
+            try:
+                # Try and get it from cache
+                score = cache.get(handle)
+                if not score:
+                    # If not in cache, call the API and set in cache
+                    score = get_klout_score(handle)
+                    cache.set(handle, score)
+
+                handle_scores[handle] = score
+            except KloutHTTPError, e:
+                # Assume this is a handle typo
+                #@TODO: flash a message to the user with all the mistakes there test tes tes
+                pass
+
+        # We now need to serialize it to json so the highcharts can read
+        json_data = json.dumps(handle_scores)
+        return render_template('chart.html', json_data=json_data)
+
+    else:
+        return render_template('error.html')
+</pre>
+{% endblock %}
