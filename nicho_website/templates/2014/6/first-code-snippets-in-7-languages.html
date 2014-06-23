@@ -1,0 +1,36 @@
+{% extends 'article.html' %}
+
+{% block article_content %}
+<p> So I've started that book <a href="http://pragprog.com/book/btlang/seven-languages-in-seven-weeks">Seven Languages in Seven Weeks</a>, and it's pretty fun. For simple personal documentation purposes, here are my first programs written in the languages</p>
+<h2>Ruby</h2>
+<pre class="prettyprint linenums">
+finished = false
+counter = 1
+random_number_to_guess = rand(10)
+
+puts "Please enter a number between 0 and 9"
+# Get user input
+x = gets
+
+until finished
+    if x.to_i == random_number_to_guess
+        if counter == 1
+            last_word = "time"
+        else
+            last_word = "times"
+        end
+        puts "You win, good job, it took you #{counter} #{last_word}"
+        finished = true
+
+    elsif x.to_i > random_number_to_guess
+        puts "You guessed too high you moron"
+        counter += 1
+        x = gets
+    else
+        puts "You guess too low you moron"
+        counter +=1
+        x = gets
+    end
+end
+</pre>
+{% endblock %}
