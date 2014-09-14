@@ -3,19 +3,20 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
 from jinja2 import Environment, PackageLoader, TemplateNotFound
 
 from utils import months
+from secret_utils import SECRET_KEY
 
 # @TODO implement cache
 # from werkzeug.contrib.cache import SimpleCache
 
 
-# create app
+# Initialize app
 app = Flask(__name__)
 app.config.from_object(__name__)
 
 # Load default config
 app.config.update(dict(
     DEBUG=True,
-    SECRET_KEY='fake_secret',
+    SECRET_KEY=SECRET_KEY,
     ))
 
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
