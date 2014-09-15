@@ -2,7 +2,8 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
     render_template, flash
 from jinja2 import Environment, PackageLoader, TemplateNotFound
 
-from utils import months
+from utils import months, get_title_from_slug
+from articles import articles_data
 from secret_utils import SECRET_KEY
 
 # @TODO implement cache
@@ -41,11 +42,7 @@ def blog():
     """
     The main blog handler
     """
-    # @TODO make this a DB thing
-    posts = [
-        {'year': 2014, 'month': 5, 'slug': 'first-post',
-            'title': 'First Post'}]
-    return render_template('blog.html', posts=posts)
+    return render_template('blog.html', articles_data=articles_data)
 
 
 @app.route('/blog/<year>/<month>/<slug>')
@@ -66,8 +63,13 @@ def blog_article(year, month, slug):
             slug=slug)
 
         time_of_writing = months[month] + " " + str(year)
+        title = get_title_from_slug(slug)
+
+        if not title:
+            title = "No title"
+
         return render_template(template_path,
-                               title="Test",
+                               title=title,
                                time_of_writing=time_of_writing)
 
     except TemplateNotFound, e:

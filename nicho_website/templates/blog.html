@@ -2,9 +2,8 @@
 
 {% block badass_content %}
 <h1>Blog</h1>
-<h2><a href="/blog/2014/5/first-post">First Post</a></h2>
-<p>This first post is mainly a test to make my website skeleton. Enjoy Lorem ipsum!</p>
-
-<h2><a href="/blog/2014/6/first-code-snippets-in-7-languages">Code snippets in 7 languages</a></h2>
-<p>I've been trying out a bunch of new languages. This documents my first ever programs in them</p>
+{% for article in articles_data %}
+<h2><a href="/blog/{{article.year}}/{{article.month}}/{{article.slug}}">{{ article.title }} </a></h2>
+    <p> {{ article.description }} </p>
+    {% endfor %}
 {% endblock %}
