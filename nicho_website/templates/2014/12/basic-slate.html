@@ -1,0 +1,127 @@
+{%extends 'article.html' %}
+
+{% block article_content %}
+<h2>What is a window manager</h2>
+<p>
+If you are like me, you probably spend more than a few hours every day in front of your screen. If you're also a little OCD and like things to go fast, as well as be as optimized as possible, then you should be using a window manager.
+<br>
+<span class="quote">OMG I'm so convinced, but what is it?</span>
+<p>
+A window manager helps you snap your windows into place on your screen. You configure it and then throw your applications from one monitor to the next, and then make them fit into the left half of the screen, the right half, a corner... Anything really!
+This will probably make it clearer for you
+</p>
+</br>
+<center><iframe src="http://gfycat.com/ifr/GrizzledShabbyBats" frameborder="0" scrolling="no" width="600" height="338" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe></br>
+    </br>
+<a href="http://www.slant.co/topics/526/~what-are-the-best-window-managers-for-mac">They're actually getting quite popular</a></center>
+</br>
+
+<p>
+I personally like to use them to divide my screen into 3 terminals, but to everyone his own way of using it! (another good example is snapping 4 different chat clients in the 4 corners...)
+
+</br>
+<span class="quote">OK I'm totally into this, what should I be doing?</span>
+</br>
+
+There are a lot of options out there, I used a few of them and they all kind of do the trick, but since I prefer open software (also, it's free), I fought a little with <a href="https://github.com/jigish/slate">SLATE</a> for it to imitate the sizeup key bindings on OSX.
+</br>Slate has a little bit of a steep configuration learning curve, but hopefully this quick tutorial will help. Make sure to also check out <a href="http://thume.ca/howto/2012/11/19/using-slate/">this very good article by Tristan Hume</a>.</br>
+
+Now you have to see slate as a swiss army knife, the amount of features is simply stupid... This article is really quite limited to getting you setup and running with a basic config. You can then explore tweaking it to your needs at will. I'm going to try and help you get setup <i>as fast as possible</i>
+
+By the end of this tutorial you should be able to:
+</p>
+<ul>
+    <li>snap to either of the 4 corners</li>
+    <li>snap to the left or the right half</li>
+    <li>snap to the top or the bottom half</li>
+    <li>send a window from one monitor to the next</li>
+    <li>focus the chrome app with cat like speed</li>
+</ul>
+
+<p>
+If you like these features, I highly recommend you go back to the documentation and to Tristan Hume's article to pimp out your window management even further.
+</p>
+
+<h2>Installation</h2>
+
+<h3>1. Install the slate application</h3>
+<p>
+The installation steps are on the <a href="https://github.com/jigish/slate">github project</a>, but honestly the easiest is to type this in the command line:
+<pre class="prettyprint">cd /Applications && curl http://www.ninjamonkeysoftware.com/slate/versions/slate-latest.tar.gz | tar -xz</pre>
+<h3>2. Configure the slate application</h3>
+<p>
+The configuration is managed through a dotfile. So basically create a file in your home directory called <span class="inline-code">~/.slate</span>
+To make things quicker, here is my file directly:
+</p>
+
+<pre class="prettyprint">
+config defaultToCurrentScreen true
+
+# Abstract positions
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
+alias bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+alias center move screenOriginX+screenSizeX/6;screenOriginY+screenSizeY/6 2*screenSizeX/3;2*screenSizeY/3
+alias bigCenter move screenOriginX+screenSizeX/12;screenOriginY+screenSizeY/12 10*screenSizeX/12;10*screenSizeY/12
+
+# Bind command+option+b to google chrome
+bind b:cmd;alt focus 'Google Chrome'
+
+# The triple keys
+alias triple ctrl;alt;cmd
+alias triple2 alt;ctrl;shift
+
+# Location bindings
+bind left:${triple} ${lefthalf}
+bind m:${triple} ${full}
+bind right:${triple} ${righthalf}
+bind up:${triple} ${tophalf}
+bind down:${triple} ${bottomhalf}
+bind c:${triple} ${center}
+bind v:${triple} ${bigCenter}
+bind down:${triple2} ${bottomleft}
+bind right:${triple2} ${bottomright}
+bind left:${triple2} ${topleft}
+bind up:${triple2} ${topright}
+
+# Monitor switching bindings
+bind right:alt,ctrl throw 1 resize
+bind left:alt,ctrl throw 0 resize
+</pre>
+
+<p>
+It should probably look quite straightforward since I tried to put comments in there. The fun part is the <span class="inline-code"># Abstract Positions</span>, where I define the corners and the halves of the screen.
+
+<h3>3. Relaunch and load config</h3>
+</p>
+<center><img src="{{ url_for('static', filename='img/relaunch-and-load-config.png') }}" /></center>
+
+<h2>Usage</h2>
+<p>
+Whenever you modify that <span class="inline-code">.slate</span> file, make sure you click "Relaunch and load config" up in the top menu bar of the application.
+
+</br>
+Now, bear in mind that I have given you the keyboard shortcuts that I like to use (I got used to these whilst using sizeup), but you could switch that main <span class="inline-code">ctrl+cmd+alt</span> for anything else (to do this modify that alias <span class="inline-code">alias triple ctrl;alt;cmd
+</span>).
+
+With great power comes great responsibility, these are your new powers:
+
+<ul>
+    <li>snap to the left half with <span class="inline-code">ctrl+cmd+alt + left arrow</span></li>
+    <li> snap to the right half of the screen with <span class="inline-code">ctrl+cmd+alt + right arrow</span></li>
+    <li> snap to the top and bottom halves with <span class="inline-code">ctrl+cmd+alt + up arrow</span> and <span class="inline-code">ctrl+cmd+alt + down arrow</span> respectively</li>
+    <li> snap to the corners with the <span class="inline-code">shift+ctrl+alt</span> + any of the arrows</li>
+    <li> send to different monitors with <span class="inline-code">ctrl+alt + right arrow</span> or <span class="inline-code">ctrl+alt + left arrow</span></li>
+    <li> open chrome: <span class="inline-code">cmd+alt + b</span></li>
+</ul>
+
+<p>
+I'll probably write a follow up article explaining how to go further with slate, but hopefully this will be enough to hook you!
+</p>
+{% endblock %}

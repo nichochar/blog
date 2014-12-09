@@ -17,15 +17,22 @@ body h1 {
     font-size:5em;
     font-weight:bold;
     color: #16a085;
+    line-height: 70px;
+    padding-bottom: 20px;
 }
 
 body h2 {
     font-size: 2.5em;
     font-weight: bold;
-    padding-top:40px;
+    padding-top:10px;
     padding-bottom:0;
     color:#000;
     opacity: 0.8;
+}
+
+body h3 {
+    color: #111930;
+    padding-top: 10px;
 }
 
 body a {
@@ -93,9 +100,11 @@ body a:hover {
 body p {
     font-size: 1.3em;
     color: #2c3e50;
+    padding-bottom: 20px;
 }
 
 body .quote {
+    display: inline-block;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 40px;
@@ -103,6 +112,20 @@ body .quote {
     padding-left: 20px;
     border-left: 10px solid #16a085;
     opacity: 0.8;
+    font-size: 1.1em;
+}
+
+body ul {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 400px;
+}
+
+iframe {
+    margin: 0 auto;
 }
 
 #page-wrap:after {
@@ -185,3 +208,17 @@ body .quote {
 .disqus-wrap {
     padding-top: 40px;
 }
+
+.center {
+    margin: 0 auto;
+}
+
+.inline-code {
+    color: black;
+    background-color: #ecf0f1;
+    font-size: 0.8em;
+    padding: 1px 5px;
+    border: 1px solid rgba(1, 1, 1, 0.1);
+    border-radius: 2px;
+}
+
