@@ -27,7 +27,7 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 # @TODO load cache
 # cache = SimpleCache()
 
-env = Environment(loader=PackageLoader('nicho_website', 'templates'))
+env = Environment(loader=PackageLoader('blog', 'templates'))
 
 
 # Handlers
