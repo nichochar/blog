@@ -1,5 +1,6 @@
-from flask import Flask, request, session, g, redirect, url_for, abort, \
-    render_template, flash
+import socket
+from flask import Flask
+from flask import render_template
 from jinja2 import Environment, PackageLoader, TemplateNotFound
 
 from utils import months, get_title_from_slug
@@ -8,6 +9,7 @@ from secret_utils import SECRET_KEY
 
 # @TODO implement cache
 # from werkzeug.contrib.cache import SimpleCache
+IS_PRODUCTION = socket.gethostname() == 'nicholascharriere'
 
 
 # Initialize app
@@ -16,7 +18,7 @@ app.config.from_object(__name__)
 
 # Load default config
 app.config.update(dict(
-    DEBUG=True,
+    DEBUG=not IS_PRODUCTION,
     SECRET_KEY=SECRET_KEY,
     ))
 
