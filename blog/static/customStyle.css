@@ -22,10 +22,10 @@ body h1 {
 }
 
 body h2 {
-    font-size: 2.5em;
+    font-size: 2.3em;
     font-weight: bold;
-    padding-top:10px;
-    padding-bottom:0;
+    padding: 10px 0;
+    line-height: 1em;
     color:#000;
     opacity: 0.8;
 }
@@ -49,8 +49,8 @@ body h2 a{
 body h2 a:hover{
     color:#111930;
     opacity:0.9;
-    padding-bottom:1px;
-    border-bottom: 2px solid #222e50;
+    text-decoration: underline;
+    border-bottom: none;
 }
 
 body a:hover {

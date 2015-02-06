@@ -1,2 +1,2 @@
-from nicho_website import app
+from blog import app
 app.run(debug=True)
