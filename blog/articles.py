@@ -11,7 +11,7 @@ articles_data = [
         'year': 2014,
         'month': 12,
         'title': 'Quick install of Slate, the OSX window manager',
-        'description': 'Window managers are more and more popular. They make you smarter, more beautiful, and overall a better person. Here\'s a quick tutorial as to how to install the open source Slate'
+        'description': 'Window managers are awesome. They make you smarter, more beautiful, and overall a better person. Tutorial to get you setup fast.'
     },
     # {
         # 'slug': 'first-code-snippets-in-7-languages',
