@@ -1,9 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block badass_content %}
-<h1>Blog</h1>
-{% for article in articles_data %}
-<h2><a href="/blog/{{article.year}}/{{article.month}}/{{article.slug}}">{{ article.title }} </a></h2>
+<div class="blog-main-page">
+    <h1>Blog</h1>
+    {% for article in articles_data %}
+    <h2><a href="/blog/{{article.year}}/{{article.month}}/{{article.slug}}">{{ article.title }} </a></h2>
     <p> {{ article.description }} </p>
     {% endfor %}
+</div>
 {% endblock %}

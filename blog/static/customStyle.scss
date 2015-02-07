@@ -127,6 +127,12 @@ body {
     }
 }
 
+.projects {
+    h2 {
+        padding-top: 1em;
+    }
+}
+
 /* used in the SLATE article */
 iframe {
     text-align: center;
@@ -240,7 +246,7 @@ iframe {
     }
     body {
         h1 {
-            font-size: 2em;
+            font-size: 3em;
             line-height: 1em;
             padding-bottom: 20px;
         }
@@ -248,7 +254,6 @@ iframe {
         h2 {
             font-size: 1.4em;
             padding: 10px 0;
-            line-height: 0.8em;
         }
 
         h3 {
@@ -281,6 +286,22 @@ iframe {
     iframe {
         margin: 0 auto;
         max-width: 95%;
+    }
+
+    .projects-main-page, .blog-main-page {
+        h2 {
+            padding-top: 20px;
+            font-size: 1.7em;
+        }
+
+        p {
+            padding-top: 0;
+            padding-bottom: 10px;
+        }
+    }
+
+    .google-plus {
+        display: none;
     }
 
     #header {
