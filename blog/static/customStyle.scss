@@ -1,0 +1,230 @@
+$color-teal: #16a085;
+$color-teal-darker: #0e6856;
+$color-grey: #2c3e50;
+$color-dark-grey: #111930;
+$color-black: #000;
+$color-inline-code-background: #ecf0f1;
+$font-stack: Avenir, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue";
+
+* {
+    margin: 0;
+}
+
+html {
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+
+html, body {
+    height: 100%;
+    font-family: $font-stack;
+    font-weight: 300;
+}
+
+body {
+    h1 {
+        font-size: 5em;
+        font-weight: bold;
+        color: $color-teal;
+        line-height: 70px;
+        padding-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 2.3em;
+        font-weight: bold;
+        padding: 10px 0;
+        line-height: 1em;
+        color: $color-black;
+        opacity: 0.8;
+
+        a {
+            color: $color-black;
+            opacity: 0.8;
+        }
+
+        a:hover {
+            color: $color-dark-grey;
+            opacity: 0.9;
+            text-decoration: underline;
+            border-bottom: none;
+        }
+    }
+
+    h3 {
+        color: $color-dark-grey;
+        padding-top: 10px;
+    }
+
+    p {
+        font-size: 1.3em;
+        color: $color-grey;
+    }
+    a {
+        color: $color-teal;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: $color-teal-darker;
+        border-bottom: 2px solid $color-teal-darker;
+        padding-bottom: 1px;
+    }
+
+    .quote {
+        diplay: inline-block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+        margin-right: 20px;
+        padding-left: 20px;
+        border-left: 10px solid $color-teal;
+        opacity: 0.8;
+        font-size: 1.1em;
+    }
+
+    ul {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+}
+
+#header {
+    height: 50px;
+    border-bottom: 1px solid $color-grey;
+    margin-bottom: 20px;
+
+    .home {
+        padding-top: 11px;
+        font-weight: bold;
+        color: $color-grey;
+        font-size: 1.3em;
+        float: left;
+    }
+
+    a.home:hover {
+        border-bottom: 2px solid $color-grey;
+        padding-bottom: 1px;
+    }
+
+    .header-links {
+        padding-top: 12px;
+        font-size: 1.2em;
+        float: right;
+
+        a {
+            margin-left: 20px;
+            font-weight: normal;
+        }
+    }
+}
+
+img {
+    max-width: 400px;
+}
+
+/* used in the SLATE article */
+iframe {
+    margin: 0 auto;
+}
+
+#page-wrap {
+    min-height: 100%;
+    margin: 0 auto;
+    margin-bottom: -50px; /* equal to footer height */
+    width: 700px;
+}
+
+#page-wrap:after {
+    content: "";
+    display: block;
+}
+
+#foot, #page-wrap:after {
+    /* push must be same height as footer */
+    height: 50px;
+}
+
+#foot {
+    margin: 0 auto;
+    width: 700px;
+    border-top: 1px solid $color-grey;
+    text-align: right;
+
+    p {
+        padding-top: 15px;
+        font-size: 1em;
+    }
+}
+
+#my-picture {
+    float: right;
+}
+
+.social-list {
+    text-align: center;
+    margin-top: 100px;
+
+    a {
+        color:#000000;
+        opacity:0.8;
+        padding: 5px;
+    }
+
+    a:hover {
+        border: none;
+    }
+}
+
+.facebook:hover {
+    color:#3a5898;
+}
+
+.twitter:hover {
+    color: #1ab7ea;
+}
+
+.github:hover {
+    color: #494f5b;
+}
+
+.linkedin:hover {
+    color: #0177b5;
+}
+
+.fivehund:hover {
+    color: #ddcc86;
+}
+
+.google-plus:hover {
+    color: #dd4b39;
+}
+
+.centered-img {
+    height: 200px;
+    width: 200px;
+}
+
+.time-of-writing {
+    opacity: 0.5;
+    font-size: 1.1em;
+    padding-bottom: 10px;
+}
+
+.disqus-wrap {
+    padding-top: 40px;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.inline-code {
+    color: black;
+    background-color: $color-inline-code-background;
+    font-size: 0.8em;
+    padding: 1px 5px;
+    border: 1px solid rgba(1, 1, 1, 0.1);
+    border-radius: 2px;
+}
