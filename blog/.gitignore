@@ -29,5 +29,4 @@ pip-delete-this-directory.txt
 
 secret_utils.py
 
-*.css.map
 .sass-cache/
