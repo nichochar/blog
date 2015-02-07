@@ -4,8 +4,8 @@
 {{ title }}
 {% endblock %}
 
+{% block badass_content %}
 <div class="article">
-    {% block badass_content %}
     <h1>{{ title }}</h1>
     <p class="time-of-writing">{{ time_of_writing }}</p>
     {% block article_content %}
@@ -28,11 +28,8 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-
-    {% endblock %}
 </div>
+{% endblock %}
 
 {% block scripts %}
 <script type="text/javascript">
