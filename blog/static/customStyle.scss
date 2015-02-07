@@ -73,15 +73,15 @@ body {
     }
 
     .quote {
-        diplay: inline-block;
         margin-top: 20px;
         margin-bottom: 20px;
         margin-left: 40px;
         margin-right: 20px;
-        padding-left: 20px;
+        padding-left: 60px;
         border-left: 10px solid $color-teal;
         opacity: 0.8;
-        font-size: 1.1em;
+        font-style: italic;
+        font-size: 1.5em;
     }
 
     ul {
@@ -120,12 +120,16 @@ body {
     }
 }
 
-img {
-    max-width: 400px;
+.article {
+    img {
+        max-width: 400px;
+        margin: 0 auto;
+    }
 }
 
 /* used in the SLATE article */
 iframe {
+    text-align: center;
     margin: 0 auto;
 }
 
@@ -218,6 +222,7 @@ iframe {
 
 .center {
     margin: 0 auto;
+    text-align: center;
 }
 
 .inline-code {
@@ -227,4 +232,72 @@ iframe {
     padding: 1px 5px;
     border: 1px solid rgba(1, 1, 1, 0.1);
     border-radius: 2px;
+}
+
+@media (max-width: 700px){
+    #page-wrap {
+        width: 95%;
+    }
+    body {
+        h1 {
+            font-size: 2em;
+            line-height: 1em;
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            padding: 10px 0;
+            line-height: 0.8em;
+        }
+
+        h3 {
+            padding-top: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            padding: 10px 5px;
+        }
+
+        .quote {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 40px;
+            margin-right: 20px;
+            padding-left: 20px;
+            border-left: 10px solid $color-teal;
+            font-size: 1.1em;
+        }
+
+        ul {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+    }
+    img {
+        max-width: 95%;
+    }
+    iframe {
+        margin: 0 auto;
+        max-width: 95%;
+    }
+
+    #header {
+        .home {
+            padding-top: 17px;
+            font-size: 0.8em;
+        }
+    }
+
+    #foot {
+        width: 95%;
+        border-top: 1px solid $color-grey;
+        text-align: right;
+
+        p {
+            padding-top: 15px;
+            font-size: 1em;
+        }
+    }
 }
