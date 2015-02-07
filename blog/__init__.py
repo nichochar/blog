@@ -96,4 +96,4 @@ def projects():
 
 @app.errorhandler(404)
 def error_404(e):
-    return 'This was a 404: %s' % e
+    return render_template('404.html')
