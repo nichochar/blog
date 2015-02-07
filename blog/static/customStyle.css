@@ -207,6 +207,9 @@ iframe {
   #header .home {
     padding-top: 17px;
     font-size: 0.8em; }
+  #header .header-links {
+    padding-top: 17px;
+    font-size: 0.8em; }
 
   #foot {
     width: 95%;
