@@ -82,7 +82,13 @@ body ul {
 
 .article img {
   max-width: 400px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
+
+.article img.larger-img {
+    max-width: 550px;
+    margin: 0 auto;
+}
 
 .projects h2 {
   padding-top: 1em; }
