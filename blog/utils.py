@@ -13,7 +13,7 @@ months = {
     10: 'october',
     11: 'november',
     12: 'december'
-    }
+}
 
 
 def get_title_from_slug(slug):
