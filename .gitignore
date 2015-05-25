@@ -45,3 +45,4 @@ docs/_build/
 
 # My secret stuff
 secret_utils.py
+*.css.map

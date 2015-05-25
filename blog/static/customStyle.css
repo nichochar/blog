@@ -36,7 +36,8 @@ body h3 {
   padding-top: 10px; }
 body p {
   font-size: 1.3em;
-  color: #2c3e50; }
+  color: #2c3e50;
+  word-spacing: 0.1em; }
 body a {
   color: #16a085;
   text-decoration: none;
@@ -82,13 +83,7 @@ body ul {
 
 .article img {
   max-width: 400px;
-  margin: 0 auto;
-}
-
-.article img.larger-img {
-    max-width: 550px;
-    margin: 0 auto;
-}
+  margin: 0 auto; }
 
 .projects h2 {
   padding-top: 1em; }
