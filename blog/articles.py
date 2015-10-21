@@ -20,4 +20,11 @@ articles_data = [
         'title': 'Moving Forward',
         'description': 'After more than 2 years at StarMaker, it\'s time to move on to the next adventure.'
     },
+    {
+        'slug': 'morning-routine',
+        'year': 2015,
+        'month': 10,
+        'title': 'Morning Routine',
+        'description': 'Ahh.. The obligatory, unoriginal rantings about my morning routine'
+    },
 ]

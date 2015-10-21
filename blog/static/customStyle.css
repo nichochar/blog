@@ -19,7 +19,8 @@ body h1 {
 body h2 {
   font-size: 2.3em;
   font-weight: bold;
-  padding: 10px 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
   line-height: 1em;
   color: #000;
   opacity: 0.8; }
@@ -34,10 +35,13 @@ body h2 {
 body h3 {
   color: #111930;
   padding-top: 10px; }
-body p {
+body p, body ul {
   font-size: 1.3em;
   color: #2c3e50;
   word-spacing: 0.1em; }
+body ul {
+  margin-top: 15px;
+  margin-bottom: 15px; }
 body a {
   color: #16a085;
   text-decoration: none;
@@ -56,9 +60,6 @@ body .quote {
   opacity: 0.8;
   font-style: italic;
   font-size: 1.5em; }
-body ul {
-  font-size: 1.2em;
-  margin-bottom: 20px; }
 
 #header {
   height: 50px;
@@ -181,13 +182,15 @@ iframe {
     line-height: 1em;
     padding-bottom: 20px; }
   body h2 {
-    font-size: 1.4em;
-    padding: 10px 0; }
+    font-size: 1.6em;
+    padding-top: 20px;
+    padding-botton: 10px; }
   body h3 {
-    padding-top: 10px; }
+    padding-top: 15px; }
   body p {
     font-size: 1.2em;
-    padding: 10px 5px; }
+    padding: 10px 5px;
+    word-spacing: 0.1em; }
   body .quote {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -198,7 +201,9 @@ iframe {
     font-size: 1.1em; }
   body ul {
     font-size: 1.2em;
-    margin-bottom: 20px; }
+    word-spacing: 0.1em;
+    margin-top: 15px;
+    margin-bottom: 15px; }
 
   img {
     max-width: 95%; }

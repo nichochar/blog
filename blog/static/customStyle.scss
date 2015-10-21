@@ -33,7 +33,8 @@ body {
     h2 {
         font-size: 2.3em;
         font-weight: bold;
-        padding: 10px 0;
+        padding-top: 20px;
+        padding-bottom: 10px;
         line-height: 1em;
         color: $color-black;
         opacity: 0.8;
@@ -56,10 +57,15 @@ body {
         padding-top: 10px;
     }
 
-    p {
+    p, ul {
         font-size: 1.3em;
         color: $color-grey;
         word-spacing: 0.1em;
+    }
+    
+    ul {
+        margin-top: 15px;
+        margin-bottom:15px;
     }
     a {
         color: $color-teal;
@@ -83,11 +89,6 @@ body {
         opacity: 0.8;
         font-style: italic;
         font-size: 1.5em;
-    }
-
-    ul {
-        font-size: 1.2em;
-        margin-bottom: 20px;
     }
 }
 
@@ -253,17 +254,19 @@ iframe {
         }
 
         h2 {
-            font-size: 1.4em;
-            padding: 10px 0;
+            font-size: 1.6em;
+            padding-top: 20px;
+            padding-botton: 10px;
         }
 
         h3 {
-            padding-top: 10px;
+            padding-top: 15px;
         }
 
         p {
             font-size: 1.2em;
             padding: 10px 5px;
+            word-spacing: 0.1em;
         }
 
         .quote {
@@ -278,7 +281,9 @@ iframe {
 
         ul {
             font-size: 1.2em;
-            margin-bottom: 20px;
+            word-spacing: 0.1em;
+            margin-top: 15px;
+            margin-bottom: 15px;
         }
     }
     img {
