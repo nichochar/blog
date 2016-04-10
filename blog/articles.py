@@ -27,4 +27,11 @@ articles_data = [
         'title': 'Morning Routine',
         'description': 'Ahh.. The obligatory, unoriginal rantings about my morning routine'
     },
+    {
+        'slug': 'avo',
+        'year': 2016,
+        'month': 4,
+        'title': 'Avo',
+        'description': 'I built something: a cool and friendly app to help develop a daily writing habit'
+    },
 ]
