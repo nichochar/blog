@@ -4,8 +4,11 @@
 <div class="blog-main-page">
     <h1>Blog</h1>
     {% for article in articles_data %}
-    <h2><a href="/blog/{{article.year}}/{{article.month}}/{{article.slug}}">{{ article.title }} </a></h2>
-    <p> {{ article.description }} </p>
+    <div class="article-preview">
+      <h2><a href="/blog/{{article.year}}/{{article.month}}/{{article.slug}}">{{ article.title }} </a></h2>
+      <p class="time-of-writing">{{ article.year }}</p>
+      <p> {{ article.description }} </p>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}

@@ -18,8 +18,7 @@ months = {
 
 def get_title_from_slug(slug):
     """
-    From just a slug, we go through the list of articles and find the right
-    one, then return the title
+    From a slug, find the right article, return it's title
     """
     for article in articles_data:
         if article['slug'] == slug:

@@ -38,7 +38,7 @@ def index():
 
 @app.route('/blog/')
 def blog():
-    return render_template('blog.html', articles_data=articles_data)
+    return render_template('blog.html', articles_data=reversed(articles_data))
 
 
 @app.route('/blog/<year>/<month>/<slug>')
