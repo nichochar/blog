@@ -78,6 +78,11 @@ def about():
 def projects():
     return render_template('projects.html')
 
+@app.route('/python')
+def python():
+    import sys
+    return str(sys.version_info)
+
 
 @app.errorhandler(404)
 def error_404(e):
