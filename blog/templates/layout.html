@@ -30,7 +30,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='simplegrid.css') }}">
-    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='customStyle.css') }}">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='blog.css') }}">
     <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='sunburst.css') }}">
 
     <!-- Link to Font Awesome -->
@@ -42,6 +42,7 @@
 
     <!-- Meta Description tags -->
     <meta name="keywords" content="Nicholas Charriere, nicholas charriere, nicholas, charriere, personal, blog" />
+
     <!-- GA -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -56,6 +57,7 @@
     {% block extra_scripts %}
     {% endblock %}
 </head>
+
 
 <body onload="prettyPrint()">
 <div id="page-wrap">
@@ -75,7 +77,6 @@
   <footer id="foot">
     <p> Made by <a href="http://twitter.com/nichochar"> @nichochar </a> <br>
   </footer>
-
 
 
 {% block scripts %}

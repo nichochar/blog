@@ -1,14 +1,15 @@
 # Simple blog
 
 Technologies used:
- * python (2 or 3 compat)
+ * python (2 for now)
  * flask
  * sass for CSS
  * nginx
 
+
 # Installation
 You will not be able to use this as-is. For one thing you will need add a file in the root directory called
-`secret_utils.py` (it's .gitignore'd):
+`blog/secret_utils.py` (it's .gitignore'd):
 ```
 SECRET_KEY="keep this secret"
 ```
