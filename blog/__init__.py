@@ -7,8 +7,6 @@ from utils import months, get_title_from_slug
 from articles import articles_data
 from secret_utils import SECRET_KEY
 
-# @TODO implement cache
-# from werkzeug.contrib.cache import SimpleCache
 IS_PRODUCTION = socket.gethostname() == 'nicholascharriere'
 
 
