@@ -15,16 +15,8 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 
 # Load default config
-app.config.update(dict(
-    DEBUG=not IS_PRODUCTION,
-    SECRET_KEY=SECRET_KEY,
-))
-
+app.config.update(dict(DEBUG=not IS_PRODUCTION, SECRET_KEY=SECRET_KEY))
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
-
-# @TODO load cache
-# cache = SimpleCache()
-
 env = Environment(loader=PackageLoader('blog', 'templates'))
 
 
@@ -49,19 +41,13 @@ def blog_article(year, month, slug):
 
     try:
         template_path = "{year}/{month}/{slug}.html".format(
-            year=year,
-            month=month,
-            slug=slug
-        )
+            year=year, month=month, slug=slug)
 
         time_of_writing = months[month] + " " + str(year)
         title = get_title_from_slug(slug) or 'No title'
 
-        return render_template(
-            template_path,
-            title=title,
-            time_of_writing=time_of_writing
-        )
+        return render_template(template_path, title=title,
+                               time_of_writing=time_of_writing)
 
     except TemplateNotFound, e:
         return error_404(e)

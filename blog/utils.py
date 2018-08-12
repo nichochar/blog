@@ -17,9 +17,7 @@ months = {
 
 
 def get_title_from_slug(slug):
-    """
-    From a slug, find the right article, return it's title
-    """
+    """ From a slug, find the right article, return it's title """
     for article in articles_data:
         if article['slug'] == slug:
             return article['title']
