@@ -1,25 +1,27 @@
+@font-face {
+  font-family: Futura;
+  src: url(/static/fonts/futur.ttf); }
+@font-face {
+  font-family: Avenir;
+  src: url(/static/fonts/Avenir\ Free/AvenirLTStd-Roman.otf); }
 * {
-  margin: 0;
-}
+  margin: 0; }
 
 html {
   overflow: -moz-scrollbars-vertical;
-  overflow-y: scroll;
-}
+  overflow-y: scroll; }
 
 html, body {
   height: 100%;
   font-family: Avenir, Futura, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue";
-  font-weight: 300;
-}
+  font-weight: 300; }
 
 body h1 {
   font-size: 5em;
   font-weight: bold;
   color: #16a085;
   line-height: 70px;
-  padding-bottom: 20px;
-}
+  padding-bottom: 20px; }
 body h2 {
   font-size: 2.3em;
   font-weight: bold;
@@ -27,41 +29,33 @@ body h2 {
   padding-bottom: 10px;
   line-height: 1em;
   color: #000;
-  opacity: 0.8;
-}
-body h2 a {
-  color: #000;
-  opacity: 0.8;
-}
-body h2 a:hover {
-  color: #111930;
-  opacity: 0.9;
-  text-decoration: underline;
-  border-bottom: none;
-}
+  opacity: 0.8; }
+  body h2 a {
+    color: #000;
+    opacity: 0.8; }
+  body h2 a:hover {
+    color: #111930;
+    opacity: 0.9;
+    text-decoration: underline;
+    border-bottom: none; }
 body h3 {
   color: #111930;
-  padding-top: 10px;
-}
+  padding-top: 10px; }
 body p, body ul {
   font-size: 1.3em;
   color: #2c3e50;
-  word-spacing: 0.1em;
-}
+  word-spacing: 0.1em; }
 body ul {
   margin-top: 15px;
-  margin-bottom: 15px;
-}
+  margin-bottom: 15px; }
 body a {
   color: #16a085;
   text-decoration: none;
-  font-weight: bold;
-}
+  font-weight: bold; }
 body a:hover {
   color: #0e6856;
   border-bottom: 2px solid #0e6856;
-  padding-bottom: 1px;
-}
+  padding-bottom: 1px; }
 body .quote {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -71,135 +65,108 @@ body .quote {
   border-left: 10px solid #16a085;
   opacity: 0.8;
   font-style: italic;
-  font-size: 1.5em;
-}
+  font-size: 1.5em; }
 
 #header {
   height: 50px;
   border-bottom: 1px solid #2c3e50;
-  margin-bottom: 20px;
-}
-#header .home {
-  padding-top: 11px;
-  font-weight: bold;
-  color: #2c3e50;
-  font-size: 1.3em;
-  float: left;
-}
-#header a.home:hover {
-  border-bottom: 2px solid #2c3e50;
-  padding-bottom: 1px;
-}
-#header .header-links {
-  padding-top: 12px;
-  font-size: 1.2em;
-  float: right;
-}
-#header .header-links a {
-  margin-left: 20px;
-  font-weight: normal;
-}
+  margin-bottom: 20px; }
+  #header .home {
+    padding-top: 11px;
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.3em;
+    float: left; }
+  #header a.home:hover {
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 1px; }
+  #header .header-links {
+    padding-top: 12px;
+    font-size: 1.2em;
+    float: right; }
+    #header .header-links a {
+      margin-left: 20px;
+      font-weight: normal; }
 
 .article img {
   max-width: 400px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 .projects h2 {
-  padding-top: 1em;
-}
+  padding-top: 1em; }
 
 /* used in the SLATE article */
 iframe {
   text-align: center;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 #page-wrap {
   min-height: 100%;
   margin: 0 auto;
   margin-bottom: -50px;
   /* equal to footer height */
-  width: 700px;
-}
+  width: 700px; }
 
 #page-wrap:after {
   content: "";
-  display: block;
-}
+  display: block; }
 
 #foot, #page-wrap:after {
   /* push must be same height as footer */
-  height: 50px;
-}
+  height: 50px; }
 
 #foot {
   margin: 0 auto;
   width: 700px;
   border-top: 1px solid #2c3e50;
-  text-align: right;
-}
-#foot p {
-  padding-top: 15px;
-  font-size: 1em;
-}
+  text-align: right; }
+  #foot p {
+    padding-top: 15px;
+    font-size: 1em; }
 
 #my-picture {
-  float: right;
-}
+  float: right; }
 
 .social-list {
   text-align: center;
-  margin-top: 100px;
-}
-.social-list a {
-  color: #000000;
-  opacity: 0.8;
-  padding: 5px;
-}
-.social-list a:hover {
-  border: none;
-}
+  margin-top: 100px; }
+  .social-list a {
+    color: #000000;
+    opacity: 0.8;
+    padding: 5px; }
+  .social-list a:hover {
+    border: none; }
 
 .twitter:hover {
-  color: #1ab7ea;
-}
+  color: #1ab7ea; }
 
 .github:hover {
-  color: #494f5b;
-}
+  color: #494f5b; }
 
 .linkedin:hover {
-  color: #0177b5;
-}
+  color: #0177b5; }
 
 .fivehund:hover {
-  color: #ddcc86;
-}
+  color: #ddcc86; }
 
 .google-plus:hover {
-  color: #dd4b39;
-}
+  color: #dd4b39; }
 
 .centered-img {
   height: 200px;
-  width: 200px;
-}
+  width: 200px; }
 
 .time-of-writing {
   opacity: 0.5;
   font-size: 1.1em;
-  padding-bottom: 10px;
-}
+  padding-bottom: 10px; }
 
 .disqus-wrap {
-  padding-top: 40px;
-}
+  padding-top: 40px; }
 
 .center {
   margin: 0 auto;
-  text-align: center;
-}
+  text-align: center; }
 
 .inline-code {
   color: black;
@@ -207,32 +174,26 @@ iframe {
   font-size: 0.8em;
   padding: 1px 5px;
   border: 1px solid rgba(1, 1, 1, 0.1);
-  border-radius: 2px;
-}
+  border-radius: 2px; }
 
 @media (max-width: 700px) {
   #page-wrap {
-    width: 95%;
-  }
+    width: 95%; }
 
   body h1 {
     font-size: 3em;
     line-height: 1em;
-    padding-bottom: 20px;
-  }
+    padding-bottom: 20px; }
   body h2 {
     font-size: 1.6em;
     padding-top: 20px;
-    padding-botton: 10px;
-  }
+    padding-botton: 10px; }
   body h3 {
-    padding-top: 15px;
-  }
+    padding-top: 15px; }
   body p {
     font-size: 1.2em;
     padding: 10px 5px;
-    word-spacing: 0.1em;
-  }
+    word-spacing: 0.1em; }
   body .quote {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -240,55 +201,43 @@ iframe {
     margin-right: 20px;
     padding-left: 20px;
     border-left: 10px solid #16a085;
-    font-size: 1.1em;
-  }
+    font-size: 1.1em; }
   body ul {
     font-size: 1.2em;
     word-spacing: 0.1em;
     margin-top: 15px;
-    margin-bottom: 15px;
-  }
+    margin-bottom: 15px; }
 
   img {
-    max-width: 95%;
-  }
+    max-width: 95%; }
 
   iframe {
     margin: 0 auto;
-    max-width: 95%;
-  }
+    max-width: 95%; }
 
   .projects-main-page h2, .blog-main-page h2 {
     padding-top: 20px;
-    font-size: 1.7em;
-  }
+    font-size: 1.7em; }
   .projects-main-page p, .blog-main-page p {
     padding-top: 0;
-    padding-bottom: 10px;
-  }
+    padding-bottom: 10px; }
 
   .google-plus {
-    display: none;
-  }
+    display: none; }
 
   #header .home {
     padding-top: 17px;
-    font-size: 0.9em;
-  }
+    font-size: 0.9em; }
   #header .header-links {
     padding-top: 17px;
-    font-size: 0.9em;
-  }
+    font-size: 0.9em; }
 
   #foot {
     width: 95%;
     border-top: 1px solid #2c3e50;
-    text-align: right;
-  }
-  #foot p {
-    padding-top: 15px;
-    font-size: 1em;
-  }
-}
+    text-align: right; }
+    #foot p {
+      padding-top: 15px;
+      font-size: 1em; } }
 
 /*# sourceMappingURL=blog.css.map */

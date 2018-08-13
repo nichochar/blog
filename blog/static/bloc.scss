@@ -6,6 +6,16 @@ $color-black: #000;
 $color-inline-code-background: #ecf0f1;
 $font-stack: Avenir, Futura, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue";
 
+@font-face {
+    font-family: Futura;
+    src: url(/static/fonts/futur.ttf);
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(/static/fonts/Avenir\ Free/AvenirLTStd-Roman.otf);
+}
+
 * {
     margin: 0;
 }
