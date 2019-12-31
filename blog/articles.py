@@ -34,4 +34,11 @@ articles_data = [
         'title': 'Avo',
         'description': 'I built something: a cool and friendly app to help develop a daily writing habit'
     },
+    {
+        'slug': 'star-wars-episode-lego',
+        'year': 2019,
+        'month': 12,
+        'title': 'Star Wars: episode LEGO',
+        'description': 'Please enjoy my submission to the OSCARS',
+    },
 ]
