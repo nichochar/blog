@@ -3,9 +3,9 @@ from flask import Flask
 from flask import render_template
 from jinja2 import Environment, PackageLoader, TemplateNotFound
 
-from utils import months, get_title_from_slug
-from articles import articles_data
-from secret_utils import SECRET_KEY
+from blog.utils import months, get_title_from_slug
+from blog.articles import articles_data
+from blog.secret_utils import SECRET_KEY
 
 IS_PRODUCTION = socket.gethostname() == 'nicholascharriere'
 
@@ -36,7 +36,7 @@ def blog_article(year, month, slug):
     try:
         year = int(year)
         month = int(month)
-    except Exception, e:
+    except Exception as e:
         return error_404(e)
 
     try:
@@ -49,7 +49,7 @@ def blog_article(year, month, slug):
         return render_template(template_path, title=title,
                                time_of_writing=time_of_writing)
 
-    except TemplateNotFound, e:
+    except TemplateNotFound as e:
         return error_404(e)
 
 

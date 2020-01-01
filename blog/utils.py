@@ -1,4 +1,4 @@
-from articles import articles_data
+from blog.articles import articles_data
 
 months = {
     1: 'january',
