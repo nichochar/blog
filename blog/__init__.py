@@ -40,14 +40,11 @@ def blog_article(year, month, slug):
         return error_404(e)
 
     try:
-        template_path = "{year}/{month}/{slug}.html".format(
-            year=year, month=month, slug=slug)
-
+        template_path = "articles/{slug}.html".format(slug=slug)
         time_of_writing = months[month] + " " + str(year)
         title = get_title_from_slug(slug) or 'No title'
 
-        return render_template(template_path, title=title,
-                               time_of_writing=time_of_writing)
+        return render_template(template_path, title=title, time_of_writing=time_of_writing)
 
     except TemplateNotFound as e:
         return error_404(e)
@@ -62,10 +59,12 @@ def about():
 def projects():
     return render_template('projects.html')
 
+
 @app.route('/python')
 def python():
     import sys
     return str(sys.version_info)
+
 
 @app.after_request
 def add_header(r):
