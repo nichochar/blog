@@ -1,0 +1,13 @@
+.masonry { 
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -8px; /* Adjustment for the gutter */
+  width: 100%;
+}
+
+.masonry-brick {
+  flex: auto;
+  height: 250px;
+  min-width: 150px;
+  margin: 0 8px 8px 0; /* Some gutter */
+}
