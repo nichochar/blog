@@ -7,9 +7,9 @@
   <p class="centered">Please enjoy our art project that ensued.</p>
   <div class="flex-container">
     {% for file_ in files %}
-    <span class="flex-grow-{{file_['size']}}">
+    <div class="flex-grow-{{file_['size']}}">
       <img id="{{file_['name']}}" src="{{ url_for('static', filename=file_['name'] % i) }}" />
-    </span>
+    </div>
     {% endfor %}
   </div>
 </div>
