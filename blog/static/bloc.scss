@@ -8,12 +8,12 @@ $font-stack: Avenir, Futura, "HelveticaNeue-Light", "Helvetica Neue Light", "Hel
 
 @font-face {
     font-family: Futura;
-    src: url(/static/fonts/futur.ttf);
+    src: url("/static/fonts/futur.ttf");
 }
 
 @font-face {
     font-family: Avenir;
-    src: url(/static/fonts/Avenir\ Free/AvenirLTStd-Roman.otf);
+    src: url("/static/fonts/Avenir\ Free/AvenirLTStd-Roman.otf");
 }
 
 * {
