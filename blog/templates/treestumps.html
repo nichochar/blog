@@ -1,8 +1,16 @@
 {% extends 'layout.html' %}
 
-{% block badass_content %}
-<h1>Tree Stumps Project</h1>
-{% for i in range(1, 34) %}
-    <img id="my-picture" src="{{ url_for('static', filename='treestumps/tree_stump_%s.jpg' % i) }}" />
-{% endfor %}
+{% block full_width_content %}
+<div id="treestumps">
+  <h1 class="centered">Tree Stumps In Arnold</h1>
+  <p class="centered">Emily and I went to the Dunn cabin in <a href="https://www.gocalaveras.com/itinerary/high-sierra/arnold/">Arnold, CA</a>, and realized that there were many tree stumps!</p>
+  <p class="centered">Please enjoy our art project that ensued.</p>
+  <div class="flex-container">
+    {% for file_ in files %}
+    <span class="flex-grow-{{file_['size']}}">
+      <img id="{{file_['name']}}" src="{{ url_for('static', filename=file_['name'] % i) }}" />
+    </span>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}

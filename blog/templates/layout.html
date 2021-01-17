@@ -58,24 +58,21 @@
 
 
 <body onload="prettyPrint()">
-<div id="page-wrap">
-    <div id="header">
-        <a class="home" href="/">Nicholas Charriere</a>
-        <span class="header-links">
-            <a href="/blog">| blog</a>
-            <a href="/projects">| projects</a>
-            <a href="/about">| about</a>
-        </span>
-    </div>
-{% block badass_content %}
-{% endblock %}
+<div id="header">
+    <a class="home" href="/">Nicholas Charriere</a>
+    <span class="header-links">
+        <a href="/blog">| blog</a>
+        <a href="/projects">| projects</a>
+        <a href="/about">| about</a>
+    </span>
 </div>
+{% block full_width_content %}
+{% endblock %}
 
-
-  <footer id="foot">
-    <p> Made by <a href="http://twitter.com/nichochar"> @nichochar </a> <br>
-  </footer>
-
+<div id="page-wrap">
+  {% block badass_content %}
+  {% endblock %}
+</div>
 
 {% block scripts %}
 {% endblock %}

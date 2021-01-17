@@ -1,4 +1,6 @@
 import socket
+import os
+import random
 from flask import Flask
 from flask import render_template
 from jinja2 import Environment, PackageLoader, TemplateNotFound
@@ -68,7 +70,17 @@ def python():
 
 @app.route('/treestumps')
 def treestumps():
-    return render_template('treestumps.html')
+    directory = 'blog/static/treestumps'
+    files = os.listdir(directory)
+    files = [f for f in files if 'jpg' in f]
+    random.shuffle(files)
+    files_and_sizes = []
+    for elt in files:
+        files_and_sizes.append({
+            'name': os.path.join('treestumps', elt),
+            'size': random.randint(1, 3),
+        })
+    return render_template('treestumps.html', files=files_and_sizes)
 
 
 @app.after_request

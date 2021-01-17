@@ -83,6 +83,8 @@ body .quote {
 }
 
 #header {
+  margin: 0 auto;
+  width: 700px;
   height: 50px;
   border-bottom: 1px solid #2c3e50;
   margin-bottom: 20px;
@@ -128,6 +130,8 @@ iframe {
   margin: 0 auto;
   margin-bottom: -50px;
   /* equal to footer height */
+  margin-top: 50px;
+  /* equal to header height */
   width: 700px;
 }
 
@@ -194,6 +198,11 @@ iframe {
   width: 200px;
 }
 
+.centered {
+  margin: 0 auto;
+  width: 700px;
+}
+
 .time-of-writing {
   opacity: 0.5;
   font-size: 1.1em;
@@ -216,6 +225,33 @@ iframe {
   padding: 1px 5px;
   border: 1px solid rgba(1, 1, 1, 0.1);
   border-radius: 2px;
+}
+
+#treestumps img {
+  width: 100%;
+  border: 3px solid #36454F;
+  border-radius: 10px;
+}
+
+#treestumps .flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#treestumps .flex-grow-1 {
+  width: 302px;
+}
+
+#treestumps .flex-grow-2 {
+  width: 504px;
+}
+
+#treestumps .flex-grow-3 {
+  margin-top: 10px;
+  width: 756px;
 }
 
 @media (max-width: 700px) {
