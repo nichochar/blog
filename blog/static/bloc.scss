@@ -268,6 +268,7 @@ iframe {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin: 10px;
 }
 
 #treestumps .flex-grow-1 {
@@ -283,7 +284,7 @@ iframe {
     width: 756px;
 }
 
-@media (max-width: 700px){
+@media (max-width: 700px) {
     #page-wrap {
         width: 95%;
     }
@@ -292,6 +293,7 @@ iframe {
             font-size: 3em;
             line-height: 1em;
             padding-bottom: 20px;
+            padding-top: 30px;
         }
 
         h2 {
@@ -352,6 +354,8 @@ iframe {
     }
 
     #header {
+        margin: 0 auto;
+        width: 100%;
         .home {
             padding-top: 17px;
             font-size: 0.9em;
