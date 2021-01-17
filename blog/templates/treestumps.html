@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+
+{% block badass_content %}
+<h1>Tree Stumps Project</h1>
+{% for i in range(1, 34) %}
+    <img id="my-picture" src="{{ url_for('static', filename='treestumps/tree_stump_' + str(i) + '.jpg') }}" />
+{% endfor %}
+{% endblock %}

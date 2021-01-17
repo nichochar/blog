@@ -66,6 +66,11 @@ def python():
     return str(sys.version_info)
 
 
+@app.route('/treestumps')
+def treestumps():
+    return render_template('treestumps.html')
+
+
 @app.after_request
 def add_header(r):
     """
