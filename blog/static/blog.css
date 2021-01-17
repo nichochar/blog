@@ -260,6 +260,9 @@ iframe {
     width: 95%;
   }
 
+  body {
+    width: 100%;
+  }
   body h1 {
     font-size: 3em;
     line-height: 1em;
