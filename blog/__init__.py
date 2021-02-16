@@ -3,6 +3,7 @@ import os
 import random
 from flask import Flask
 from flask import render_template
+from flask import redirect
 from jinja2 import Environment, PackageLoader, TemplateNotFound
 
 from blog.utils import months, get_title_from_slug
@@ -66,6 +67,11 @@ def projects():
 def python():
     import sys
     return str(sys.version_info)
+
+
+@app.route('/resume')
+def resume():
+    return redirect(url_for('static/pdf/CV.pdf'))
 
 
 @app.route('/treestumps')
