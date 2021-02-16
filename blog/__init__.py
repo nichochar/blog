@@ -15,7 +15,7 @@ IS_PRODUCTION = socket.gethostname() == 'nicholascharriere'
 
 
 # Initialize app
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 app.config.from_object(__name__)
 
 # Load default config
@@ -72,7 +72,12 @@ def python():
 
 @app.route('/resume')
 def resume():
-    return redirect(url_for('static/pdf/CV.pdf'))
+    return app.send_static_file('pdf/CV.pdf')
+
+
+@app.route('/cv')
+def cv():
+    return app.send_static_file('pdf/CV.pdf')
 
 
 @app.route('/treestumps')
