@@ -3,7 +3,7 @@
 This is the source code for my blog, that I host on a [digital ocean box](https://m.do.co/c/e1c4aa70f263), which is a service that I highly recommend.
 
 Technology stack:
- * python (2 for now)
+ * python3
  * [flask & jinja2](https://flask.palletsprojects.com/en/1.1.x/)
  * [sass](https://sass-lang.com/) for CSS
  * [nginx](https://docs.nginx.com/nginx/)
@@ -27,3 +27,7 @@ The basic compilation syntax is:
 ```
 sass static/css/style.sass static/css/style.css
 ```
+
+# Production
+
+I typically create a virtualenv with `python3 -m venv env`, then `pip install -r requirements.txt` and then run through uWSGI + systemD. (`sudo service blog start/restart/stop`, configured in `/etc/systemd/system/blog.service`
