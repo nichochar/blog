@@ -1,14 +1,13 @@
 import socket
 import os
 import random
+import json
+
 from flask import Flask
 from flask import render_template
-from flask import redirect
-from flask import url_for
 from jinja2 import Environment, PackageLoader, TemplateNotFound
 
-from blog.utils import months, get_title_from_slug
-from blog.articles import articles_data
+from blog.utils import MONTHS, get_title_from_slug
 from blog.secret_utils import SECRET_KEY
 
 IS_PRODUCTION = socket.gethostname() == 'nicholascharriere'
@@ -23,6 +22,11 @@ app.config.update(dict(DEBUG=not IS_PRODUCTION, SECRET_KEY=SECRET_KEY))
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 env = Environment(loader=PackageLoader('blog', 'templates'))
 
+ARTICLES_PATH = os.path.join(app.root_path, 'articles.json')
+with open(ARTICLES_PATH, 'r') as f:
+    articles_data = json.load(f)
+app.config.update(articles=articles_data)
+
 
 # Handlers
 @app.route('/')
@@ -32,7 +36,7 @@ def index():
 
 @app.route('/blog/')
 def blog():
-    return render_template('blog.html', articles_data=reversed(articles_data))
+    return render_template('blog.html', articles_data=reversed(app.config["articles"]))
 
 
 @app.route('/blog/<year>/<month>/<slug>')
@@ -44,9 +48,9 @@ def blog_article(year, month, slug):
         return error_404(e)
 
     try:
-        template_path = "articles/{slug}.html".format(slug=slug)
-        time_of_writing = months[month] + " " + str(year)
-        title = get_title_from_slug(slug) or 'No title'
+        template_path = f"articles/{slug}.html"
+        time_of_writing = MONTHS[month] + " " + str(year)
+        title = get_title_from_slug(slug, app.config["articles"]) or 'No title'
 
         return render_template(template_path, title=title, time_of_writing=time_of_writing)
 

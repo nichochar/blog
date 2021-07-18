@@ -1,6 +1,4 @@
-from blog.articles import articles_data
-
-months = {
+MONTHS = {
     1: 'january',
     2: 'februrary',
     3: 'march',
@@ -16,9 +14,9 @@ months = {
 }
 
 
-def get_title_from_slug(slug):
+def get_title_from_slug(slug, articles):
     """ From a slug, find the right article, return it's title """
-    for article in articles_data:
+    for article in articles:
         if article['slug'] == slug:
             return article['title']
 
